@@ -1,23 +1,23 @@
 package com.firsthelpfinancial.fhfwebsocket.model;
 
 public class EventMessage {
-    private String appId;
-    private String action;
+    private String message;
+    private String type;
 
-    public String getAppId() {
-        return appId;
+    public String getMessage() {
+        return message;
     }
 
-    public void setAppId(String appId) {
-        this.appId = appId;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public String getAction() {
-        return action;
+    public String getType() {
+        return type;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setType(String type) {
+        this.type = type;
     }
 }
 
