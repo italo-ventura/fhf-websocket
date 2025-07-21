@@ -27,13 +27,13 @@ public class EventsController {
     }
 
     @PostMapping("/{applicationId}")
-    public void publishAppEvent(@RequestBody EventMessage message, @PathVariable String applicationId) {
+    public void publishAppEventREST(@RequestBody EventMessage message, @PathVariable String applicationId) {
         messagingTemplate.convertAndSend(String.format("/topic/%s/events", applicationId), message);
     }
 
     @MessageMapping("/{applicationId}")
     @SendTo("/topic/{applicationId}/events")
-    public EventMessage publishAppEvent(EventMessage message) {
+    public EventMessage publishAppEventWS(EventMessage message) {
         return message;
     }
 }
